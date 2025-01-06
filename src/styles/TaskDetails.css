@@ -1,0 +1,36 @@
+/* Kontener szczegółów zadania */
+.task-details-container {
+    padding: 20px;
+    background: #e8f5e9; /* Jasnozielone tło */
+    border: 1px solid #a5d6a7; /* Jasna zieleń */
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+  
+  /* Nagłówek */
+  .task-details-container h1 {
+    color: #2e7d32; /* Ciemna zieleń */
+    margin-bottom: 20px;
+  }
+  
+  /* Tekst */
+  .task-details-container p {
+    font-size: 1rem;
+    color: #388e3c; /* Średnia zieleń */
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  
+  .task-details-container p strong {
+    color: #1b5e20; /* Głęboka zieleń */
+  }
+  
+  /* Hover dla całego kontenera (opcjonalnie) */
+  .task-details-container:hover {
+    background: #f1f8e9; /* Delikatny zielony odcień */
+    border-color: #66bb6a; /* Akcent zieleni */
+  }
