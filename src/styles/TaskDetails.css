@@ -1,36 +1,94 @@
-/* Kontener szczegółów zadania */
 .task-details-container {
     padding: 20px;
-    background: #e8f5e9; /* Jasnozielone tło */
-    border: 1px solid #a5d6a7; /* Jasna zieleń */
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
     border-radius: 8px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    text-align: left;
+    max-width: 800px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in;
   }
   
-  /* Nagłówek */
-  .task-details-container h1 {
-    color: #2e7d32; /* Ciemna zieleń */
-    margin-bottom: 20px;
-  }
-  
-  /* Tekst */
-  .task-details-container p {
+  .task-details-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
     font-size: 1rem;
-    color: #388e3c; /* Średnia zieleń */
-    line-height: 1.5;
-    margin: 10px 0;
+    color: #2e7d32;
   }
   
-  .task-details-container p strong {
-    color: #1b5e20; /* Głęboka zieleń */
+  .task-details-container input,
+  .task-details-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #a5d6a7;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
   }
   
-  /* Hover dla całego kontenera (opcjonalnie) */
-  .task-details-container:hover {
-    background: #f1f8e9; /* Delikatny zielony odcień */
-    border-color: #66bb6a; /* Akcent zieleni */
+  .task-details-container textarea {
+    resize: none;
+    height: 200px;
+  }
+  
+  .task-details-container p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .task-details-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e7d32;
+  }
+  
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05);
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    .task-details-container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .task-details-container input,
+    .task-details-container textarea {
+      font-size: 1rem;
+    }
+  
+    .back-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .task-details-container {
+      padding: 10px;
+    }
+  
+    .task-details-container textarea {
+      height: 150px;
+    }
   }
