@@ -60,9 +60,19 @@ const Dashboard = () => {
     navigate(`/task/${id}`);
   };
 
+  // Nawigacja do podstrony profilu
+  const handleGoToProfile = () => {
+    navigate('/profile');
+  };
+
   return (
     <div className="kanban-container">
-      <h1>Tablica Kanban - {userLegion}</h1>
+      <h1>Rozkazy - {userLegion}</h1>
+
+      {/* Przycisk do przejścia na profil */}
+      <div className="profile-button">
+        <button onClick={handleGoToProfile}>Profil</button>
+      </div>
 
       {/* Dodawanie nowego zadania */}
       <div className="add-task">

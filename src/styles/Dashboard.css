@@ -1,127 +1,127 @@
 .kanban-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #2e7d32;
-  }
-  
-  .add-task {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    justify-content: center;
-  }
-  
-  .add-task input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 200px;
-  }
-  
-  .add-task button {
-    padding: 8px 16px;
-    background-color: #388e3c;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .add-task button:hover {
-    background-color: #2e7d32;
-  }
-  
-  .kanban-board {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .kanban-column {
-    width: 300px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .kanban-column h2 {
-    text-align: center;
-    color: #2e7d32;
-    margin-bottom: 10px;
-  }
-  
-  .kanban-task {
-    background-color: #f1f8e9;
-    border: 1px solid #c5e1a5;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .kanban-task p {
-    margin: 0;
-    font-size: 1rem;
-    color: #33691e;
-  }
-  
-  .kanban-task button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #388e3c;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-  
-  .kanban-task button:hover {
-    background-color: #2e7d32;
-  }
-  .task-actions {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .task-actions button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    background-color: #388e3c;
-    color: white;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .task-actions button:hover {
-    background-color: #2e7d32;
-    transform: scale(1.05);
-  }
-  
-  .task-actions button:nth-child(2) {
-    background-color: #1976d2;
-  }
-  
-  .task-actions button:nth-child(2):hover {
-    background-color: #1565c0;
-  }
-  .kanban-task p {
-    margin: 0;
-    font-size: 1rem;
-    color: #33691e;
-  }
-  
-  .kanban-task p strong {
-    color: #2e7d32;
-    font-weight: bold;
-  }
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  color: #2e7d32;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.add-task input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.add-task button {
+  padding: 8px 16px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background-color: #2e7d32;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.kanban-column {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-column h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.kanban-task {
+  background-color: #f1f8e9;
+  border: 1px solid #c5e1a5;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-task p {
+  margin: 0;
+  font-size: 1rem;
+  color: #33691e;
+}
+
+.kanban-task button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.kanban-task button:hover {
+  background-color: #2e7d32;
+}
+.task-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: #388e3c;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-actions button:hover {
+  background-color: #2e7d32;
+  transform: scale(1.05);
+}
+
+.task-actions button:nth-child(2) {
+  background-color: #1976d2;
+}
+
+.task-actions button:nth-child(2):hover {
+  background-color: #1565c0;
+}
+.kanban-task p {
+  margin: 0;
+  font-size: 1rem;
+  color: #33691e;
+}
+
+.kanban-task p strong {
+  color: #2e7d32;
+  font-weight: bold;
+}

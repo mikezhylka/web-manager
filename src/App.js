@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { AppProvider } from './context/AppContext'; // Import AppProvider
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import TaskDetails from './pages/TaskDetails';
-import Profile from './pages/Profile'; // Import nowej strony Profile
 import CalendarPage from './pages/Calendar'; // Import nowej strony
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Profile from './pages/Profile'; // Import nowej strony Profile
+import TaskDetails from './pages/TaskDetails';
 
 function App() {
   return (

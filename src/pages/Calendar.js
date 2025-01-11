@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Calendar from 'react-calendar'; // Import biblioteki kalendarza
-import 'react-calendar/dist/Calendar.css'; // Stylizacja kalendarza
-import '../styles/Calendar.css'; // Własne style
-import { fetchTasks } from '../services/Api'; // Mockowana funkcja pobierania zadań
-import { useNavigate } from 'react-router-dom'; // Hook do nawigacji
+import React, { useEffect, useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { useNavigate } from 'react-router-dom';
+import { fetchTasks } from '../services/Api';
+import '../styles/Calendar.css';
 
 const CalendarPage = () => {
   const [tasks, setTasks] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [tasksForDate, setTasksForDate] = useState([]);
-  const navigate = useNavigate(); // Hook do nawigacji
+  const navigate = useNavigate();
 
   // Pobieranie zadań
   useEffect(() => {
