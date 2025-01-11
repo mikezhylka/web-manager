@@ -1,0 +1,72 @@
+.profile-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .profile-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e7d32;
+  }
+  
+  .profile-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .profile-container input,
+  .profile-container select {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .profile-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #388e3c;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .profile-container button:hover {
+    background-color: #2e7d32;
+  }
+  
+  .back-button {
+    margin-top: 20px;
+    background-color: #1976d2;
+  }
+  
+  .back-button:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Komunikaty sukcesu i błędów */
+  .success-message {
+    color: green;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+  }

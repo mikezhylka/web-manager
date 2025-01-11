@@ -1,0 +1,111 @@
+.calendar-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.calendar-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.tasks-for-date ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tasks-for-date li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.tasks-for-date li.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.tasks-for-date li.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Powrót do panelu */
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #2e7d32;
+  transform: scale(1.05);
+}
+
+/* Wyróżnione daty */
+.highlighted-date {
+  background-color: transparent; /* Brak wypełnienia */
+  color: #2e7d32; /* Zielony tekst */
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Zapobiega wychodzeniu elementów poza box */
+}
+
+/* Dodanie grubej zielonej obwódki */
+.highlighted-date::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Zmniejszamy szerokość do 90%, aby okręg mieścił się w box */
+  height: 90%; /* Zmniejszamy wysokość do 90% */
+  border: 4px solid #2e7d32; /* Gruba, ciągła zielona linia */
+  border-radius: 50%; /* Okrąg */
+  box-sizing: border-box; /* Uwzględnij border w rozmiarze */
+  z-index: -1;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Wyróżnione daty hover */
+.highlighted-date:hover::before {
+  box-shadow: 0 0 12px rgba(46, 125, 50, 0.8); /* Efekt podświetlenia okręgu */
+  transform: translate(-50%, -50%) scale(1.1); /* Minimalne powiększenie (1.1) */
+  width: 100%; /* Ustawiamy szerokość na maksymalny rozmiar boxa */
+  height: 100%; /* Ustawiamy wysokość na maksymalny rozmiar boxa */
+}
+
+/* Media queries dla mniejszych ekranów */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 15px;
+  }
+
+  .tasks-for-date ul {
+    font-size: 0.9rem;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

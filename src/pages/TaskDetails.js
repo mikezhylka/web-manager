@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { fetchTaskDetails } from '../services/Api';
+import { fetchTaskDetails, fetchCommentsForTask, addCommentToTask } from '../services/Api';
 import '../styles/TaskDetails.css';
 
 const TaskDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate(); // Hook do nawigacji
   const [task, setTask] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const [error, setError] = useState('');
 
-  // Pobieranie szczegółów zadania
+  // Pobieranie szczegółów zadania i komentarzy
   useEffect(() => {
     const loadTaskDetails = async () => {
-      const data = await fetchTaskDetails(id);
-      setTask(data);
+      try {
+        const taskData = await fetchTaskDetails(id);
+        setTask(taskData);
+
+        const commentsData = await fetchCommentsForTask(id);
+        setComments(commentsData);
+      } catch (err) {
+        setError('Nie udało się załadować szczegółów zadania.');
+      }
     };
 
     loadTaskDetails();
@@ -26,9 +36,30 @@ const TaskDetails = () => {
     }));
   };
 
+  // Dodawanie nowego komentarza
+  const handleAddComment = async () => {
+    if (newComment.trim() === '') return;
+
+    try {
+      const result = await addCommentToTask(id, {
+        author: 'Aktualny Użytkownik', // Możesz zastąpić dynamicznym autorem
+        text: newComment,
+        date: new Date().toISOString(),
+      });
+
+      if (result.success) {
+        setComments((prevComments) => [...prevComments, result.comment]);
+        setNewComment('');
+      }
+    } catch (err) {
+      setError('Nie udało się dodać komentarza.');
+    }
+  };
+
   return (
     <div className="task-details-container">
       <h1>Szczegóły zadania</h1>
+      {error && <p className="error-message">{error}</p>}
       {task ? (
         <>
           <p>
@@ -55,6 +86,31 @@ const TaskDetails = () => {
           <button className="back-button" onClick={() => navigate('/dashboard')}>
             Powrót do panelu zadań
           </button>
+
+          {/* Sekcja komentarzy */}
+          <div className="comments-section">
+            <h2>Komentarze</h2>
+            <ul>
+              {comments.map((comment) => (
+                <li key={comment.id}>
+                  <p>
+                    <strong>{comment.author}</strong> ({new Date(comment.date).toLocaleDateString()}):{' '}
+                    {comment.text}
+                  </p>
+                </li>
+              ))}
+            </ul>
+
+            {/* Dodawanie nowego komentarza */}
+            <div className="add-comment">
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder="Dodaj komentarz..."
+              ></textarea>
+              <button onClick={handleAddComment}>Dodaj komentarz</button>
+            </div>
+          </div>
         </>
       ) : (
         <p>Wczytywanie...</p>
@@ -63,4 +119,4 @@ const TaskDetails = () => {
   );
 };
 
-export default TaskDetails;
+export default TaskDetails; 
